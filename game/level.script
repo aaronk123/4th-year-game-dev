@@ -1,6 +1,6 @@
 local BACKGROUND_COLOR = vmath.vector4(0/255, 103/255, 126/255, 255/255)
 
 function init(self)
-	msg.post("@render:", "use_fixed_projection", { zoom = 3, near = -10, far = 10 })
+	msg.post("@render:", "use_fixed_projection", { zoom = 2.5, near = -30, far = 30 })
 	msg.post("@render:", "clear_color", { color = BACKGROUND_COLOR })
 end
