@@ -18,7 +18,7 @@ local RECOIL = 500
 -- pre-hashing ids improves performance
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
 local GROUND = hash("ground")
-local RESPAWMN = hash("respawn")
+local RESPAWN = hash("respawn")
 local ENEMY = hash("enemy")
 
 local LEFT = hash("left")
@@ -32,6 +32,7 @@ local ANIM_JUMP = hash("player_jump")
 local ANIM_FALL = hash("player_fall")
 
 local SPRITE = "visuals#sprite"
+local MOVING_PLATFORM = hash("game#movingPlatform")
 
 
 function init(self)
@@ -126,6 +127,7 @@ function update(self, dt)
 	else
 		self.velocity.x = decelerate(self.velocity.x, 1, dt)
 		self.velocity.x = clamp(self.velocity.x, -MAX_AIR_SPEED, MAX_AIR_SPEED)
+		msg.post(".", "set_parent", { parent_id = nil })
 	end
 	
 	-- move player
@@ -188,10 +190,15 @@ end
 function on_message(self, message_id, message, sender)
 	-- check if we received a contact point message
 	if message_id == CONTACT_POINT_RESPONSE then
-		-- check that the object is something we consider an obstacle
 		if message.group == GROUND then
+			msg.post(".", "set_parent", { parent_id = message.other_id })
 			handle_obstacle_contact(self, message.normal, message.distance)
-		elseif message.group == RESPAWMN or message.group == ENEMY then
+		elseif message.group == MOVING_PLATFORM then
+			msg.post(".", "set_parent", { parent_id = message.other_id })
+			handle_obstacle_contact(self, message.normal, message.distance)
+		elseif message.group == RESPAWN or message.group == ENEMY then
+			msg.post(".", "set_parent", { parent_id = nil })
+			print(self.spawn_position)
 			go.set_position(self.spawn_position)
 		end
 	end
