@@ -1,7 +1,7 @@
 emitters {
   id: "left"
   mode: PLAY_MODE_ONCE
-  duration: 0.2
+  duration: 0.4
   space: EMISSION_SPACE_WORLD
   position {
     x: 0.0
@@ -14,20 +14,20 @@ emitters {
     z: 0.70710677
     w: 0.70710677
   }
-  tile_source: "/builtins/graphics/particle_blob.tilesource"
-  animation: "anim"
+  tile_source: "/assets/extras.tilesource"
+  animation: "bubbles"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
-  particle_orientation: PARTICLE_ORIENTATION_DEFAULT
+  particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   inherit_velocity: 0.0
-  max_particle_count: 2
+  max_particle_count: 5
   type: EMITTER_TYPE_2DCONE
   start_delay: 0.0
   properties {
     key: EMITTER_KEY_SPAWN_RATE
     points {
       x: 0.0
-      y: 30.0
+      y: 20.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -67,7 +67,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
       x: 0.0
-      y: 1.0
+      y: 3.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -77,11 +77,11 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 3.0
+      y: 4.0
       t_x: 1.0
       t_y: 0.0
     }
-    spread: 1.0
+    spread: 0.0
   }
   properties {
     key: EMITTER_KEY_PARTICLE_SIZE
@@ -97,7 +97,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_RED
     points {
       x: 0.0
-      y: 1.0
+      y: 0.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -201,7 +201,7 @@ emitters {
     key: PARTICLE_KEY_GREEN
     points {
       x: 0.0
-      y: 103.0
+      y: 1.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -210,7 +210,7 @@ emitters {
     key: PARTICLE_KEY_BLUE
     points {
       x: 0.0
-      y: 126.0
+      y: 1.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -287,7 +287,7 @@ emitters {
 emitters {
   id: "right"
   mode: PLAY_MODE_ONCE
-  duration: 0.2
+  duration: 0.4
   space: EMISSION_SPACE_WORLD
   position {
     x: 0.0
@@ -300,13 +300,13 @@ emitters {
     z: -0.70710677
     w: 0.70710677
   }
-  tile_source: "/builtins/graphics/particle_blob.tilesource"
-  animation: "anim"
+  tile_source: "/assets/extras.tilesource"
+  animation: "bubbles"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
-  particle_orientation: PARTICLE_ORIENTATION_DEFAULT
+  particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   inherit_velocity: 0.0
-  max_particle_count: 2
+  max_particle_count: 5
   type: EMITTER_TYPE_2DCONE
   start_delay: 0.0
   properties {
@@ -353,7 +353,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
       x: 0.0
-      y: 1.0
+      y: 3.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -363,11 +363,11 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 3.0
+      y: 4.0
       t_x: 1.0
       t_y: 0.0
     }
-    spread: 1.0
+    spread: 0.0
   }
   properties {
     key: EMITTER_KEY_PARTICLE_SIZE
@@ -588,10 +588,10 @@ modifiers {
     key: MODIFIER_KEY_MAGNITUDE
     points {
       x: 0.0
-      y: -10.0
+      y: 4.0
       t_x: 1.0
       t_y: 0.0
     }
-    spread: 0.0
+    spread: 4.0
   }
 }
