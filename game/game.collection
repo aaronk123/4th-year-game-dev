@@ -4,7 +4,7 @@ instances {
   prototype: "/game/bee.go"
   position {
     x: 301.0
-    y: 174.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -24,7 +24,7 @@ instances {
   prototype: "/game/bee.go"
   position {
     x: 542.0
-    y: 301.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -44,7 +44,7 @@ instances {
   prototype: "/game/slime.go"
   position {
     x: 792.0
-    y: 291.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -64,7 +64,7 @@ instances {
   prototype: "/game/slime.go"
   position {
     x: -8.0
-    y: 211.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -84,14 +84,14 @@ instances {
   prototype: "/game/slime.go"
   position {
     x: 585.0
-    y: 227.0
+    y: 100.0
     z: 0.0
   }
   rotation {
     x: 0.0
-    y: 0.0
+    y: 0.9996613
     z: 0.0
-    w: 1.0
+    w: 0.026023874
   }
   scale3 {
     x: 1.0
@@ -104,7 +104,7 @@ instances {
   prototype: "/game/bluebee.go"
   position {
     x: 329.0
-    y: 281.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -132,7 +132,7 @@ instances {
   prototype: "/game/bluebee.go"
   position {
     x: 602.0
-    y: 328.0
+    y: 100.0
     z: 0.0
   }
   rotation {
@@ -160,7 +160,7 @@ instances {
   prototype: "/game/bluebee.go"
   position {
     x: 492.0
-    y: 269.0
+    y: 100.0
     z: 0.0
   }
   rotation {
