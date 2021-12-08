@@ -188,14 +188,14 @@ collection_instances {
   collection: "/game/player.collection"
   position {
     x: 256.0
-    y: 165.0
+    y: 280.0
     z: 1.0
   }
   rotation {
-    x: 0.0
+    x: -0.045394402
     y: 0.0
     z: 0.0
-    w: 1.0
+    w: 0.99896914
   }
   scale3 {
     x: 1.0
@@ -249,6 +249,7 @@ embedded_instances {
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
   "locked_rotation: false\\n"
+  "bullet: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -296,6 +297,7 @@ embedded_instances {
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
   "locked_rotation: false\\n"
+  "bullet: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -369,9 +371,7 @@ embedded_instances {
   "line_break: false\\n"
   "text: \\\"ARROWS = MOVE\\\\n"
   "\\\"\\n"
-  "  \\\"SPACE = JUMP + DOUBLE JUMP\\\\n"
-  "\\\"\\n"
-  "  \\\"X = SHOOT\\\"\\n"
+  "  \\\"SPACE = JUMP + DOUBLE JUMP\\\"\\n"
   "font: \\\"/assets/fonts/instructions.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
@@ -390,7 +390,7 @@ embedded_instances {
   ""
   position {
     x: 249.0
-    y: 148.0
+    y: 250.0
     z: 0.0
   }
   rotation {
