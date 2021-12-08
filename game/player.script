@@ -35,6 +35,7 @@ local SPRITE = "visuals#sprite"
 
 
 function init(self)
+	sound.play("audio#bgm", {delay = 0, gain = 0.5, pan = 0, speed = 1.0})
 	-- this lets us handle input in this script
 	msg.post(".", "acquire_input_focus")
 
@@ -204,6 +205,7 @@ local function jump(self)
 		self.velocity.y = JUMP_TAKEOFF_SPEED
 		-- play animation
 		play_animation(self, ANIM_JUMP)
+		sound.play("audio#jump", {delay = 0, gain = 0.5, pan = 0, speed = 1.0})
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
 		squish()
