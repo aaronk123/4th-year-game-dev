@@ -8,10 +8,6 @@ main_collection = /game/game.collectionc
 game_binding = /input/game.input_bindingc
 use_accelerometer = 0
 
-[display]
-width = 960
-height = 640
-
 [ios]
 app_icon_120x120 = /assets/app_icons/icon_120.png
 app_icon_180x180 = /assets/app_icons/icon_180.png
