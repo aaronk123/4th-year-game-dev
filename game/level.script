@@ -1,6 +1,27 @@
-local BACKGROUND_COLOR = vmath.vector4(0/255, 103/255, 126/255, 255/255)
+local WATER_CHANGE = hash("water_change")
+local gval = 103
 
 function init(self)
 	msg.post("@render:", "use_fixed_projection", { zoom = 2.5, near = -30, far = 30 })
-	msg.post("@render:", "clear_color", { color = BACKGROUND_COLOR })
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0/255, gval/255, 126/255, 255/255) })
+	timer.delay(1.5, true, update_bval)
+end
+
+function update_water(change_rate)
+	gval = gval - change_rate
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0/255, gval/255, 126/255, 255/255) })
+end
+
+function update_bval()
+	if (gval <= 251) then
+		gval = gval + 4
+		msg.post("@render:", "clear_color", { color = vmath.vector4(0/255, gval/255, 126/255, 255/255) })
+	end
+end
+		
+function on_message(self, message_id, message, sender)
+	if message_id == WATER_CHANGE then
+		print("water change")
+		update_water(25)
+	end
 end

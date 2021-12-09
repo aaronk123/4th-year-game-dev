@@ -44,5 +44,7 @@ function on_message(self, message_id, message, sender)
 			math.randomseed(os.time())
 			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[math.random(1, 10)]})
 		end
+
+		msg.post("/level#script", "water_change", {updatewater = 2})
 	end
 end
