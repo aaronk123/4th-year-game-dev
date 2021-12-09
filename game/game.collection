@@ -248,7 +248,7 @@ instances {
   prototype: "/game/kelp.go"
   position {
     x: 165.0
-    y: 228.0
+    y: 229.0
     z: 0.0
   }
   rotation {
