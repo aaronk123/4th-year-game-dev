@@ -1,5 +1,7 @@
 go.property("distance", 50)
 
+local u = 0
+
 win_message = {"The ocean generates over half of the oxygen we breathe", 
 "The ocean contains more than 97% of the world’s water", 
 "A healthy ocean regulates climate and reduce climate change impacts", 
@@ -19,6 +21,15 @@ local rubbish_remaining = 5
 
 function init(self)
 
+end
+
+local function random(x, y)
+	u = u + 1
+	if x ~= nil and y ~= nil then
+		return math.floor(x +(math.random(math.randomseed(os.time()+u))*999999 %y))
+	else
+		return math.floor((math.random(math.randomseed(os.time()+u))*100))
+	end
 end
 
 function on_message(self, message_id, message, sender)
@@ -41,8 +52,7 @@ function on_message(self, message_id, message, sender)
 		print(rubbish_remaining)
 
 		if rubbish_remaining == 0 then
-			math.randomseed(os.time())
-			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[math.random(1, 10)]})
+			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[random(1, 10)]})
 		end
 
 		msg.post("/level#script", "water_change", {updatewater = 2})
