@@ -1,5 +1,15 @@
 go.property("distance", 50)
 
+win_message = {"The ocean generates over half of the oxygen we breathe", 
+"The ocean contains more than 97% of the world’s water", 
+"A healthy ocean regulates climate and reduce climate change impacts", 
+"The ocean provides at least one fifth of the animal protein people eat",
+"The ocean provides millions of livelihoods that stimulate local and global economies", 
+"Ocean ecosystems contain ingredients for critical medications", 
+"The ocean creates an important form of transportation",
+"The ocean provides an incredible source of beauty, inspiration, and recreation",
+"The ocean supports an incredible diversity of life"}
+
 local SPEED = 10
 local DEAD_SPEED = 200
 
@@ -29,5 +39,9 @@ function on_message(self, message_id, message, sender)
 		rubbish_remaining = rubbish_remaining - 1
 		msg.post("/hud#rubbish_remaining", "update_rubbish_remaining", {newrubbishremaining = rubbish_remaining})
 		print(rubbish_remaining)
+
+		if rubbish_remaining == 0 then
+			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[math.random(1, 10)]})
+		end
 	end
 end

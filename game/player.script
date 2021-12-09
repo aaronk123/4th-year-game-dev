@@ -195,12 +195,17 @@ function on_message(self, message_id, message, sender)
 			handle_obstacle_contact(self, message.normal, message.distance)
 		elseif message.group == RESPAWN then
 			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = "you died..."})
+			timer.delay(2, true, updateMessage)
 			msg.post(".", "set_parent", { parent_id = nil })
 			go.set_position(self.spawn_position)
 		elseif message.group == ENEMY then
 			msg.post(".", "set_parent", { parent_id = nil })
 		end
 	end
+end
+
+function updateMessage(self, handle, time_elapsed)
+	msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = ""})
 end
 
 local function jump(self)
