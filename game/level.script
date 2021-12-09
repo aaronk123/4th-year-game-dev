@@ -3,6 +3,26 @@ local GAME_COMPLETE = hash("game_complete")
 local gval = 103
 local gameinprogress = true
 
+lose_message = {"18 billion pounds of plastic trash winds up in our oceans each year...", 
+"There are 5.25 trillion pieces of plastic debris in the ocean...", 
+"80% of trash in the ocean is from land-based sources...", 
+"Plastics cause more than 80% of the negative effects on animals associated with ocean trash...",
+"There is an island of garbage twice the size of Texas inside the Pacific Ocean...", 
+"Ocean pollutions kills more than one million sea birds each year...", 
+"Approximately every square mile of ocean has more than 46,000 pieces of plastic floating in it...",
+"Over 100,000 marine animals die every year from plastic entanglement and ingestion..."}
+
+local u = 0
+
+local function random(x, y)
+	u = u + 1
+	if x ~= nil and y ~= nil then
+		return math.floor(x +(math.random(math.randomseed(os.time()+u))*999999 %y))
+	else
+		return math.floor((math.random(math.randomseed(os.time()+u))*100))
+	end
+end
+
 function init(self)
 	msg.post("@render:", "use_fixed_projection", { zoom = 2.5, near = -30, far = 30 })
 	msg.post("@render:", "clear_color", { color = vmath.vector4(0/255, gval/255, 126/255, 255/255) })
@@ -20,7 +40,7 @@ function update_gval()
 			gval = gval + 4
 			msg.post("@render:", "clear_color", { color = vmath.vector4(0/255, gval/255, 126/255, 255/255) })
 			if (gval > 200) then
-				msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = "you died..."})
+				msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = lose_message[random(1,9)]})
 				gameinprogress = false
 			end
 		end
