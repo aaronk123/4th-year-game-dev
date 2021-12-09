@@ -1,0 +1,4 @@
+function on_message(self, message_id, message, sender)
+	local rubbish_node = gui.get_node("rubbishremaining")
+	gui.set_text(rubbish_node, message.newrubbishremaining)
+end

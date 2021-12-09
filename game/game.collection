@@ -1,10 +1,10 @@
 name: "game"
 instances {
-  id: "bee2"
-  prototype: "/game/bee.go"
+  id: "rubbish1"
+  prototype: "/game/rubbish.go"
   position {
-    x: 301.0
-    y: 100.0
+    x: -54.0
+    y: 310.0
     z: 0.0
   }
   rotation {
@@ -14,172 +14,8 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "bee1"
-  prototype: "/game/bee.go"
-  position {
-    x: 542.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "slime"
-  prototype: "/game/slime.go"
-  position {
-    x: 792.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "slime1"
-  prototype: "/game/slime.go"
-  position {
-    x: -8.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "slime3"
-  prototype: "/game/slime.go"
-  position {
-    x: 585.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.9996613
-    z: 0.0
-    w: 0.026023874
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "bluebee2"
-  prototype: "/game/bluebee.go"
-  position {
-    x: 329.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "bluebee"
-    properties {
-      id: "distance"
-      value: "120.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "bluebee1"
-  prototype: "/game/bluebee.go"
-  position {
-    x: 602.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "bluebee"
-    properties {
-      id: "distance"
-      value: "145.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "bluebee3"
-  prototype: "/game/bluebee.go"
-  position {
-    x: 492.0
-    y: 100.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "bluebee"
-    properties {
-      id: "distance"
-      value: "120.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
+    x: 0.209
+    y: 0.165
     z: 1.0
   }
 }
@@ -340,6 +176,86 @@ instances {
   scale3 {
     x: 1.0
     y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "rubbish"
+  prototype: "/game/rubbish.go"
+  position {
+    x: 287.0
+    y: 509.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.209
+    y: 0.165
+    z: 1.0
+  }
+}
+instances {
+  id: "rubbish2"
+  prototype: "/game/rubbish.go"
+  position {
+    x: 629.0
+    y: 383.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.209
+    y: 0.165
+    z: 1.0
+  }
+}
+instances {
+  id: "rubbish3"
+  prototype: "/game/rubbish.go"
+  position {
+    x: 867.0
+    y: 745.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.209
+    y: 0.165
+    z: 1.0
+  }
+}
+instances {
+  id: "rubbish4"
+  prototype: "/game/rubbish.go"
+  position {
+    x: 582.0
+    y: 590.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.209
+    y: 0.165
     z: 1.0
   }
 }
@@ -551,6 +467,41 @@ embedded_instances {
   position {
     x: 249.0
     y: 250.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "hud"
+  data: "components {\n"
+  "  id: \"rubbish_remaining\"\n"
+  "  component: \"/game/rubbish_remaining.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {

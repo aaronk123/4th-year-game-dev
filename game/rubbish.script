@@ -1,0 +1,32 @@
+go.property("distance", 50)
+
+local SPEED = 10
+local DEAD_SPEED = 200
+
+local COLLISION_RESPONSE = hash("collision_response")
+local BULLET = hash("bullet")
+local rubbish_remaining = 5
+
+function init(self)
+
+end
+
+function on_message(self, message_id, message, sender)
+	if self.dead then return end
+	if message_id == COLLISION_RESPONSE then
+		-- turn the bee upside down and make it drop dead!
+		-- also flag it as dead and ignore any additional messages
+		self.dead = true
+		sprite.set_vflip("#sprite", true)
+		local pos = go.get_position()
+		local duration = pos.y / DEAD_SPEED
+		go.cancel_animations(".", "position.y")
+		go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_INQUAD, duration, 0, function()
+			go.delete()
+		end)
+
+		rubbish_remaining = rubbish_remaining - 1
+		msg.post("/hud#rubbish_remaining", "update_rubbish_remaining", {newrubbishremaining = rubbish_remaining})
+		print(rubbish_remaining)
+	end
+end
