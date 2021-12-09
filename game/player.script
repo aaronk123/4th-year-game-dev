@@ -193,9 +193,11 @@ function on_message(self, message_id, message, sender)
 		elseif message.group == MOVING_PLATFORM then
 			msg.post(".", "set_parent", { parent_id = message.other_id })
 			handle_obstacle_contact(self, message.normal, message.distance)
-		elseif message.group == RESPAWN or message.group == ENEMY then
+		elseif message.group == RESPAWN then
 			msg.post(".", "set_parent", { parent_id = nil })
-			-- go.set_position(self.spawn_position)
+			go.set_position(self.spawn_position)
+		elseif message.group == ENEMY then
+			msg.post(".", "set_parent", { parent_id = nil })
 		end
 	end
 end
