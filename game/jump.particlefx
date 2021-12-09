@@ -18,10 +18,10 @@ emitters {
   animation: "bubbles"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
-  particle_orientation: PARTICLE_ORIENTATION_DEFAULT
+  particle_orientation: PARTICLE_ORIENTATION_INITIAL_DIRECTION
   inherit_velocity: 0.0
   max_particle_count: 10
-  type: EMITTER_TYPE_2DCONE
+  type: EMITTER_TYPE_CONE
   start_delay: 0.2
   properties {
     key: EMITTER_KEY_SPAWN_RATE
@@ -77,7 +77,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 2.0
+      y: 4.0
       t_x: 1.0
       t_y: 0.0
     }

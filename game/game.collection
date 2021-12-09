@@ -243,6 +243,106 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "kelp"
+  prototype: "/game/kelp.go"
+  position {
+    x: 165.0
+    y: 228.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.677
+    z: 1.0
+  }
+}
+instances {
+  id: "kelp1"
+  prototype: "/game/kelp.go"
+  position {
+    x: 147.0
+    y: 223.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "kelp2"
+  prototype: "/game/kelp.go"
+  position {
+    x: 403.0
+    y: 221.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 0.74
+    z: 1.0
+  }
+}
+instances {
+  id: "kelp3"
+  prototype: "/game/kelp.go"
+  position {
+    x: 421.0
+    y: 232.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 2.106
+    z: 1.0
+  }
+}
+instances {
+  id: "kelp4"
+  prototype: "/game/kelp.go"
+  position {
+    x: 385.0
+    y: 223.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 collection_instances {
   id: "player"
   collection: "/game/player.collection"
