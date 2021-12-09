@@ -1,4 +1,11 @@
 function on_message(self, message_id, message, sender)
-	local rubbish_node = gui.get_node("rubbishremaining")
-	gui.set_text(rubbish_node, message.newrubbishremaining)
+	if message_id == hash("update_rubbish_remaining") then
+		local rubbish_node = gui.get_node("rubbishremaining")
+		gui.set_text(rubbish_node, message.newrubbishremaining)
+	end
+
+	if message_id == hash("update_end_message") then
+		local end_message_node = gui.get_node("endmessage")
+		gui.set_text(end_message_node, message.newendmessage)
+	end
 end

@@ -25,6 +25,7 @@ function on_message(self, message_id, message, sender)
 			go.delete()
 		end)
 
+		msg.post("rubbish#pickup", "play_sound", {delay = 0, gain = 1})
 		rubbish_remaining = rubbish_remaining - 1
 		msg.post("/hud#rubbish_remaining", "update_rubbish_remaining", {newrubbishremaining = rubbish_remaining})
 		print(rubbish_remaining)
