@@ -51,7 +51,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("/hud#rubbish_remaining", "update_rubbish_remaining", {newrubbishremaining = rubbish_remaining})
 		print(rubbish_remaining)
 
-		if rubbish_remaining == 0 then
+		if rubbish_remaining == 4 then
 			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[random(1, 10)]})
 		end
 
