@@ -2,15 +2,15 @@ go.property("distance", 50)
 
 local u = 0
 
-win_message = {"The ocean generates over half of the oxygen we breathe", 
-"The ocean contains more than 97% of the world’s water", 
-"A healthy ocean regulates climate and reduce climate change impacts", 
-"The ocean provides at least one fifth of the animal protein people eat",
-"The ocean provides millions of livelihoods that stimulate local and global economies", 
-"Ocean ecosystems contain ingredients for critical medications", 
-"The ocean creates an important form of transportation",
-"The ocean provides an incredible source of beauty, inspiration, and recreation",
-"The ocean supports an incredible diversity of life"}
+win_message = {"The Frogs are saved!\nThe ocean generates over half of the oxygen we breathe", 
+"The Frogs are saved!\nThe ocean contains more than 97% of the world’s water", 
+"The Frogs are saved!\nA healthy ocean regulates climate and reduce climate change impacts", 
+"The Frogs are saved!\nThe ocean provides at least one fifth of the animal protein people eat",
+"The Frogs are saved!\nThe ocean provides millions of livelihoods that stimulate local and global economies", 
+"The Frogs are saved!\nOcean ecosystems contain ingredients for critical medications", 
+"The Frogs are saved!\nThe ocean creates an important form of transportation",
+"The Frogs are saved!\nThe ocean provides an incredible source of beauty, inspiration, and recreation",
+"The Frogs are saved!\nThe ocean supports an incredible diversity of life"}
 
 local SPEED = 10
 local DEAD_SPEED = 200
@@ -52,7 +52,9 @@ function on_message(self, message_id, message, sender)
 		print(rubbish_remaining)
 
 		if rubbish_remaining == 0 then
-			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[random(1, 10)]})
+			msg.post("/hud#rubbish_remaining", "update_end_message", {newendmessage = win_message[random(1, 9)]})
+			msg.post("/player/audio#bgm", "stop_sound", {delay = 0, gain = 1})
+			msg.post("/player/audio#winbgm", "play_sound", {delay = 0.5, gain = 1})
 			msg.post("/level#script", "game_complete", {})
 		end
 

@@ -15,6 +15,7 @@ local DOUBLEJUMP_TAKEOFF_SPEED = 200
 
 -- pre-hashing ids improves performance
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local DEAD = hash("dead")
 local GROUND = hash("ground")
 local RESPAWN = hash("respawn")
 local ENEMY = hash("enemy")
@@ -31,6 +32,9 @@ local ANIM_FALL = hash("player_fall")
 
 local SPRITE = "visuals#sprite"
 local MOVING_PLATFORM = hash("game#movingPlatform")
+
+local END = false
+local DEAD_SPEED = 200
 
 function init(self)
 	sound.play("audio#bgm", {delay = 0, gain = 0.5, pan = 0, speed = 1.0})
@@ -186,7 +190,22 @@ end
 
 function on_message(self, message_id, message, sender)
 	-- check if we received a contact point message
-	if message_id == CONTACT_POINT_RESPONSE then
+	if message_id == DEAD then
+		local pos = go.get_position("player")
+		local camerapos = go.get_position("camera")
+		camerapos.x = -900
+		camerapos.y = -900
+		go.set_position(camerapos, "camera")
+		END = true
+		go.cancel_animations(".", "position.y")
+		sprite.set_vflip(SPRITE, true)
+		local duration = pos.y / DEAD_SPEED
+		go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_INQUAD, duration, 0, function()
+			go.delete()
+		end)
+	end
+
+	if message_id == CONTACT_POINT_RESPONSE and not END then
 		if message.group == GROUND then
 			msg.post(".", "set_parent", { parent_id = message.other_id })
 			handle_obstacle_contact(self, message.normal, message.distance)
